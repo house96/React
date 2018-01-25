@@ -5,35 +5,35 @@ import './App.css'
 
 export default class App extends Component {
   state = {
-    value: '',
-    postList: []
+    news: [],
+    newsInput: ''
   }
   render() {
-    const { value, postList } = this.state
+    const { newsInput, news } = this.state
     return (
       <div className="App">
         <input
           type="text"
           className="comment-input"
-          onChange={this.handleChangeInput}
-          value={value}
+          onChange={this.handleChange}
+          value={newsInput}
           placeholder="Какие новости ?"
         />
-        <button type="text" onClick={this.handleClickBtn}>
+        <button type="text" onClick={this.handleNewPost}>
           Create news
         </button>
-        <NewsPost postList={postList} />
+        <NewsPost postList={news} />
       </div>
     )
   }
 
-  handleChangeInput = evt => {
-    this.setState({ value: evt.target.value })
+  handleChange = evt => {
+    this.setState({ newsInput: evt.target.value })
   }
 
-  handleClickBtn = () => {
-    const { postList, value } = this.state
-    this.setState({ postList: [...postList, value] })
-    this.setState({ value: '' })
+  handleNewPost = () => {
+    const { newsInput, news } = this.state
+    this.setState({ news: [...news, newsInput] })
+    this.setState({ newsInput: '' })
   }
 }
