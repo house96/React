@@ -1,5 +1,5 @@
 import React from 'react'
-import './NewsPost.css'
+import './NewPost.css'
 
 export default function NewsPost(props) {
   const { postList } = props
@@ -10,5 +10,5 @@ export default function NewsPost(props) {
       </li>
     )
   })
-  return <ul className="comment-input">{post}</ul>
+  return <ul className="todo-container">{post}</ul>
 }

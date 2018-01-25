@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+
 import NewsPost from './NewsPost'
+import './App.css'
 
 export default class App extends Component {
   state = {
@@ -9,9 +11,10 @@ export default class App extends Component {
   render() {
     const { value, postList } = this.state
     return (
-      <div>
+      <div className="App">
         <input
           type="text"
+          className="comment-input"
           onChange={this.handleChangeInput}
           value={value}
           placeholder="Какие новости ?"
