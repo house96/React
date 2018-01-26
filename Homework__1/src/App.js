@@ -22,7 +22,9 @@ export default class App extends Component {
         <button type="text" onClick={this.handleNewPost}>
           Create news
         </button>
-        <NewsPost postList={news} />
+        <div className="todo-container">
+          {news.map((post, key) => <NewsPost text={post.text} key={key} />)}
+        </div>
       </div>
     )
   }
@@ -33,7 +35,7 @@ export default class App extends Component {
 
   handleNewPost = () => {
     const { newsInput, news } = this.state
-    this.setState({ news: [...news, newsInput] })
+    this.setState({ news: [...news, { text: newsInput }] })
     this.setState({ newsInput: '' })
   }
 }
