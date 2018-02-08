@@ -1,0 +1,12 @@
+.App {
+  padding: 16px;
+  width: 400px;
+}
+.comment-input {
+  border-radius: 3px;
+  border: 1px solid #eee;
+  padding: 2px 3px;
+  font-size: 14px;
+  color: #000;
+  width: 100%;
+}
